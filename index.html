@@ -1,0 +1,80 @@
+<html>
+<head>
+    <title>Interactive Quiz</title>
+
+    <style>
+        body {
+            background-color: #f2f6ff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+
+        #question {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 10px;
+            width: 200px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Simple Quiz</h2>
+
+<p id="question">What is the sum of 2 + 2?</p>
+
+<input type="text" id="answer" placeholder="Enter your answer">
+<br>
+
+<button onclick="checkAnswer()">Submit</button>
+
+<p id="result"></p>
+
+<script>
+    function checkAnswer() {
+        var userAnswer = document.getElementById("answer").value.trim();
+        var correctAnswer = "4";
+
+        if (userAnswer === correctAnswer) {
+            document.getElementById("result").innerText = "✅ Correct Answer!";
+        } else {
+            document.getElementById("result").innerText = "❌ Wrong Answer. Try again!";
+        }
+    }
+</script>
+
+</body>
+</html>
